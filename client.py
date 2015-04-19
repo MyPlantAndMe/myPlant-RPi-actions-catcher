@@ -20,7 +20,7 @@ def dispatch(sensor, duration):
     if (sensor in ['lights', 'fan', 'water']):
         write(sensor, duration)
     else:
-        print 'Invalid sensor data: ' + sensor
+        print 'Invalid sensor name: ' + sensor
 
 def main():
     response = receiveJson()

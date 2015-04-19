@@ -7,12 +7,12 @@ filename = 'lights'
 def enable():
     print 'enable'
     with open('/dev/pi-blaster', 'w') as outfile:
-        call(['echo', '"25=1"'], stdout=outfile)
+        call(['echo', '25=1'], stdout=outfile)
 
 def disable():
     print 'disable'
     with open('/dev/pi-blaster', 'w') as outfile:
-        call(['echo', '"25=0"'], stdout=outfile)
+        call(['echo', '25=0'], stdout=outfile)
 
 def wait(seconds):
     print 'wait ' + str(seconds) + ' seconds'

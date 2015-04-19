@@ -3,14 +3,15 @@ from subprocess import call
 import time
 
 filename = 'lights'
+call(['gpio', 'mode', '27', 'out'])
 
 def enable():
     print 'enable'
-    call(['ls', '-l'])
+    call(['gpio', 'write', '27', '1'])
 
 def disable():
     print 'disable'
-    call(['ls', '-c'])
+    call(['gpio', 'write', '27', '0'])
 
 def wait(seconds):
     print 'wait ' + str(seconds) + ' seconds'

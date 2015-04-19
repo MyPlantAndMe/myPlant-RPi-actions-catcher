@@ -6,24 +6,25 @@ filename = 'fan'
 
 def enable():
     print 'enable'
-    call(['gpio', '1'])
+    call(['ls', '-l'])
 
 def disable():
     print 'disable'
-    call(['gpio', '0'])
+    call(['ls', '-c'])
 
 def wait(seconds):
-    print 'wait ' + seconds + ' seconds'
-    time.sleep(duration)
+    print 'wait ' + str(seconds) + ' seconds'
+    time.sleep(seconds)
 
 def main():
     with open(filename, 'r') as f:
         data = f.read()
 
-    duration = int(data)
-    enable()
-    wait(duration)
-    disable()
+    if (data):
+        duration = int(data)
+        enable()
+        wait(duration)
+        disable()
 
 while True:
     main()
